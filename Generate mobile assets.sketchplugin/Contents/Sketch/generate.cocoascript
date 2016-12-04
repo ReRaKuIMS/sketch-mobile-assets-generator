@@ -1,14 +1,20 @@
 @import "lib/document_parser.js"
+@import "lib/config_loader.js"
 
 var onRun = function(context) {
-  var parsed = DocumentParser.parse(context.document)
-  log(parsed)
+  var layers = DocumentParser.parse(context.document)
+  var config = ConfigLoader.load(["xcode_asset_catalog", "android_res"])
+  log(config)
 }
 
 var android = function(context) {
-  log("TODO: generate assets for android.")
+  var layers = DocumentParser.parse(context.document)
+  var config = ConfigLoader.load(["android_res"])
+  log(config)
 }
 
 var ios = function(context) {
-  log("TODO: generate assets for ios.")
+  var layers = DocumentParser.parse(context.document)
+  var config = ConfigLoader.load(["xcode_asset_catalog"])
+  log(config)
 }

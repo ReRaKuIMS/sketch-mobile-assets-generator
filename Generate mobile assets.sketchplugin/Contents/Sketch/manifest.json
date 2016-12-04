@@ -12,13 +12,13 @@
       "script": "generate.cocoascript"
     },
     {
-      "name": "Generate Android",
+      "name": "Generate Android Resources",
       "identifier": "android",
       "script": "generate.cocoascript",
       "handler": "android"
     },
     {
-      "name": "Generate iOS",
+      "name": "Generate iOS Asset Catalog",
       "identifier": "ios",
       "script": "generate.cocoascript",
       "handler": "ios"
