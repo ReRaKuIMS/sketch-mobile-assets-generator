@@ -50,7 +50,7 @@ var DocumentParser = {
 
     return {
       baseName: components.slice(-1)[0],
-      platforms: components.slice(0, -1)
+      formats: components.slice(0, -1)
     }
   }
 }

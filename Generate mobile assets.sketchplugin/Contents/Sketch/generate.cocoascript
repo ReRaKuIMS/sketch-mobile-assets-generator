@@ -1,20 +1,26 @@
 @import "lib/document_parser.js"
 @import "lib/config_loader.js"
+@import "lib/exporter.js"
 
 var onRun = function(context) {
-  var layers = DocumentParser.parse(context.document)
-  var config = ConfigLoader.load(["xcode_asset_catalog", "android_res"])
-  log(config)
+  _generate(context, ["xcode_asset_catalog", "android_res"])
 }
 
 var android = function(context) {
-  var layers = DocumentParser.parse(context.document)
-  var config = ConfigLoader.load(["android_res"])
-  log(config)
+  _generate(context, ["android_res"])
 }
 
 var ios = function(context) {
-  var layers = DocumentParser.parse(context.document)
-  var config = ConfigLoader.load(["xcode_asset_catalog"])
-  log(config)
+  _generate(context, ["xcode_asset_catalog"])
+}
+
+var _generate = function(context, configTypes) {
+  var document = context.document
+  var baseDir = document.fileURL().path().split(document.displayName())[0] + "build"
+  var exporter = new Exporter(document, baseDir)
+
+  var layerGroups = DocumentParser.parse(context.document)
+  var configs = ConfigLoader.load(configTypes)
+
+  exporter.export(layerGroups, configs)
 }
