@@ -1,0 +1,41 @@
+{
+  "name": "Generate mobile assets",
+  "description": "Plugins to generate assets for iOS and Android.",
+  "author": "yisogai",
+  "version": 0.1,
+  "identifier": "jp.co.reraku.GenerateMobileAssets",
+  "commands": [
+    {
+      "name": "Generate All",
+      "identifier": "all",
+      "shortcut": "ctrl shift e",
+      "script": "generate.cocoascript"
+    },
+    {
+      "name": "Generate Android",
+      "identifier": "android",
+      "script": "generate.cocoascript",
+      "handler": "android"
+    },
+    {
+      "name": "Generate iOS",
+      "identifier": "ios",
+      "script": "generate.cocoascript",
+      "handler": "ios"
+    }
+  ],
+  "menu": {
+    "title": "Generate Mobile Assets",
+    "items": [
+      "all",
+      "-",
+      {
+        "title": "Platforms",
+        "items": [
+          "android",
+          "ios"
+        ]
+      }
+    ]
+  }
+}

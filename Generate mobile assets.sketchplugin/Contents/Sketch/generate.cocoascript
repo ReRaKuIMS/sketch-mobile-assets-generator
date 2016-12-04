@@ -1,0 +1,11 @@
+var onRun = function(context) {
+  log("TODO: generate assets for all platforms.");
+}
+
+var android = function(context) {
+  log("TODO: generate assets for android.");
+}
+
+var ios = function(context) {
+  log("TODO: generate assets for ios.");
+}
