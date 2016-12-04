@@ -1,11 +1,14 @@
+@import "lib/document_parser.js"
+
 var onRun = function(context) {
-  log("TODO: generate assets for all platforms.");
+  var parsed = DocumentParser.parse(context.document)
+  log(parsed)
 }
 
 var android = function(context) {
-  log("TODO: generate assets for android.");
+  log("TODO: generate assets for android.")
 }
 
 var ios = function(context) {
-  log("TODO: generate assets for ios.");
+  log("TODO: generate assets for ios.")
 }
