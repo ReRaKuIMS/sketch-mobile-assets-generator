@@ -19,7 +19,7 @@ var _generate = function(context, configTypes) {
   var baseDir = document.fileURL().path().split(document.displayName())[0] + "build"
   var exporter = new Exporter(document, baseDir)
 
-  var layerGroups = DocumentParser.parse(context.document)
+  var layerGroups = DocumentParser.parse(document)
   var configs = ConfigLoader.load(configTypes)
 
   exporter.export(layerGroups, configs)
