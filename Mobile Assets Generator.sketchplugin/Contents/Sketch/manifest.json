@@ -1,9 +1,9 @@
 {
-  "name": "Generate mobile assets",
+  "name": "Mobile Assets Generator",
   "description": "Plugins to generate assets for iOS and Android.",
   "author": "yisogai",
   "version": 0.1,
-  "identifier": "jp.co.reraku.GenerateMobileAssets",
+  "identifier": "jp.co.reraku.sketch-mobile-assets-generator",
   "commands": [
     {
       "name": "Generate All",
@@ -25,7 +25,7 @@
     }
   ],
   "menu": {
-    "title": "Generate Mobile Assets",
+    "title": "Mobile Assets Generator",
     "items": [
       "all",
       "-",
