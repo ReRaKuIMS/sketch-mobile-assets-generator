@@ -43,7 +43,6 @@ var Exporter = (function() {
 
     layers.forEach(function(layer){
       var dir = root + "/" + layer.name() + ".imageset"
-
       var contents = {
         info: {
           version: 1,
@@ -53,7 +52,7 @@ var Exporter = (function() {
       }
 
       config.images.forEach(function(image){
-        var request = MSExportRequest.exportRequestsFromExportableLayer(layer)[0]
+        var request = MSExportRequest.exportRequestsFromExportableLayer_inRect_useIDForName(layer, layer.absoluteRect().rect(), false)[0]
         request.scale = image.scale
         var filename = layer.name() + "_" + image.idiom + "@" + image.scale + "x.png"
         that.document.saveArtboardOrSlice_toFile(request, dir + "/" + filename)
