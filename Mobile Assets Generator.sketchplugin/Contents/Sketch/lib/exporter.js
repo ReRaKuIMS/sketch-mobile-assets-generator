@@ -74,7 +74,7 @@ var Exporter = (function() {
 
     layers.forEach(function(layer){
       config.densities.forEach(function(density){
-        var request = MSExportRequest.exportRequestsFromExportableLayer(layer)[0]
+        var request = MSExportRequest.exportRequestsFromExportableLayer_inRect_useIDForName(layer, layer.absoluteRect().rect(), false)[0]
         request.scale = density.scale
         var filename = baseName + "_" + layer.name() + ".png"
         var file = root + "/" + density.folder + "/" + filename
